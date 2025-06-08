@@ -1,0 +1,21 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],  
+  
+    "compilerOptions": {
+        "types": ["babel__generator"],
+        "typeRoots": ["node_modules/@types"],
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "allowSyntheticDefaultImports": true
+        //Other options
+     },
+     //Other configurations...
+}

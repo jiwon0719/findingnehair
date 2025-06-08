@@ -1,0 +1,70 @@
+# === 기본 빌드 및 IDE 관련 ===
+.gradle/
+build/
+bin/
+out/
+
+# === gradle wrapper ===
+!gradle/wrapper/gradle-wrapper.jar
+
+# === 프로젝트 내 build 폴더 무시하되 src 내 것은 허용 ===
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# === VS Code ===
+.vscode/
+
+# === IntelliJ IDEA ===
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# IntelliJ generated files to ignore
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+.idea/**/aws.xml
+.idea/**/contentModel.xml
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
+.idea/**/gradle.xml
+.idea/**/libraries
+.idea/**/sonarlint/
+.idea/**/sonarIssues.xml
+.idea/**/markdown-navigator.xml
+.idea/**/markdown-navigator-enh.xml
+.idea/**/markdown-navigator/
+.idea/codestream.xml
+.idea/**/azureSettings.xml
+.idea/httpRequests
+.idea/caches/build_file_checksums.ser
+
+# === NetBeans ===
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# === STS (Spring Tool Suite) ===
+.apt_generated/
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans/
+.sts4-cache/
+
+# === CMake ===
+cmake-build-*/
+
+# === 기타 ===
+HELP.md
