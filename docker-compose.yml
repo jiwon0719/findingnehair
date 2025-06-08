@@ -1,0 +1,37 @@
+services:
+  backend:
+    container_name: "${ENVIRONMENT}-backend"
+    image: "${ENVIRONMENT}-backend"
+    build: ./be/findingnehair
+    restart: always
+    ports:
+      - "${SPRING_BOOT_PORT:-8080}:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL}
+      - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
+      - SPRING_KAKAO_AUTH_CLIENT=${SPRING_KAKAO_AUTH_CLIENT}
+      - fast_api_url=${fast_api_url}
+      - accessKey=${accessKey}
+      - secretKey=${secretKey}
+      - bucketName=${bucketName}
+      - region=${region}
+      
+  frontend:
+    container_name: "${ENVIRONMENT}-frontend"
+    build:
+      context: ./fe/findingnehair
+      args:
+        VITE_KAKAO_API_KEY: ${VITE_KAKAO_API_KEY}
+        VITE_BASE_URL: ${VITE_BASE_URL}
+        VITE_KAKAO_REDIRECT_URI: ${VITE_KAKAO_REDIRECT_URI}
+
+    restart: always
+    ports:
+      - "${REACT_PORT:-3000}:3000"
+  ai:
+    container_name: "${ENVIRONMENT}-ai"
+    build: ./ai/findingnehair
+    restart: always
+    ports:
+      - "${AI_PORT:-8000}:8000"
